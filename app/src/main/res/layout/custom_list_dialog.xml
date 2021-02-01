@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp"
+    android:background="#fff"
+    android:layout_centerInParent="true"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/show_files_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose a action"
+            android:textColor="#000"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_med"
+            />
+
+        <TextView
+            android:id="@+id/view_files"
+
+            android:layout_width="match_parent"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content"
+            android:text="View File"
+            android:textColor="#4E4848"
+            android:drawableRight="@drawable/ic_navigate_next_black_24dp"
+            android:drawableLeft="@drawable/ic_pageview_black_24dp"
+            android:drawablePadding="10dp"
+            android:layout_gravity="center_horizontal"
+
+            android:textSize="18dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_med"
+            />
+
+        <TextView
+            android:id="@+id/share_file"
+
+            android:layout_width="match_parent"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content"
+            android:text="Share"
+            android:textColor="#4E4848"
+            android:drawableRight="@drawable/ic_navigate_next_black_24dp"
+            android:drawableLeft="@drawable/ic_share_black_24dp"
+            android:drawablePadding="10dp"
+            android:layout_gravity="center_horizontal"
+
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_med"
+            />
+
+        <TextView
+            android:id="@+id/delete_file"
+
+            android:layout_width="match_parent"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:textColor="#4E4848"
+            android:drawableRight="@drawable/ic_navigate_next_black_24dp"
+            android:drawableLeft="@drawable/ic_delete_sweep_black_24dp"
+            android:drawablePadding="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_med"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

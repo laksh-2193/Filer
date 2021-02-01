@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "975798285834",
+    "project_id": "filer-f47eb",
+    "storage_bucket": "filer-f47eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975798285834:android:9501f2a9d659d0667591f3",
+        "android_client_info": {
+          "package_name": "com.example.filer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975798285834-ogp6si5bqjgol1nggeqc6bpn3d2aqa3h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5KqgOAFZyhoazbvinAsKAJb9Bb28i5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975798285834-ogp6si5bqjgol1nggeqc6bpn3d2aqa3h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
