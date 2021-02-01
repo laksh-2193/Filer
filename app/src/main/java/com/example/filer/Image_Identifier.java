@@ -106,7 +106,7 @@ public class Image_Identifier extends AppCompatActivity {
                     File filepath = Environment.getExternalStorageDirectory();
                     File dir = new File(filepath.getAbsolutePath()+"/Filer/");
                     dir.mkdir();
-                    File file = new File(dir,"qr_code_"+data_ed.getText().toString()+".jpeg");
+                    File file = new File(dir,"qr_code_"+System.currentTimeMillis()+".jpeg");
                     try {
                         outputStream = new FileOutputStream(file);
                     }
