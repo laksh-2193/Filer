@@ -100,43 +100,61 @@ public class Image_Identifier extends AppCompatActivity {
         qr_code.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try{
+                    BitmapDrawable drawable = (BitmapDrawable) qr_code.getDrawable();
+                    Bitmap bitmap = drawable.getBitmap();
+                    File filepath = Environment.getExternalStorageDirectory();
+                    File dir = new File(filepath.getAbsolutePath()+"/Filer/");
+                    dir.mkdir();
+                    File file = new File(dir,"qr_code_"+data_ed.getText().toString()+".jpeg");
+                    try {
+                        outputStream = new FileOutputStream(file);
+                    }
+                    catch (Exception e){
+                        Toast.makeText(getApplicationContext(),e.getMessage().toString(),Toast.LENGTH_SHORT).show();
 
-                BitmapDrawable drawable = (BitmapDrawable) qr_code.getDrawable();
-                Bitmap bitmap = drawable.getBitmap();
-                File filepath = Environment.getExternalStorageDirectory();
-                File dir = new File(filepath.getAbsolutePath()+"/Filer/");
-                dir.mkdir();
-                File file = new File(dir,"qr_code_"+data_ed.getText().toString()+".png");
-                try {
-                    outputStream = new FileOutputStream(file);
+                    }
+                    try {
+                        bitmap.compress(Bitmap.CompressFormat.JPEG,100,outputStream);
+                        TastyToast.makeText(getApplicationContext(),"File saved",TastyToast.LENGTH_SHORT,TastyToast.SUCCESS).show();
+                        File file2 = new File(Environment.getExternalStorageDirectory(),
+                                "/Filer/");
+                        if(file2.exists()){
+                            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                            intent.setDataAndType(Uri.fromFile(file2), "*/*");
+                            startActivity(intent);
+                        }
+                        else{
+                            Toast.makeText(getApplicationContext(),"File doesn't exists",Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                    catch (Exception e){
+                        Toast.makeText(getApplicationContext(),"Failed to save to file - "+e.getMessage().toString(),Toast.LENGTH_LONG).show();
+
+
+                    }
+
+
+
+                    try {
+                        outputStream.flush();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        outputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+
                 }
                 catch (Exception e){
-                    Toast.makeText(getApplicationContext(),e.getMessage().toString(),Toast.LENGTH_SHORT).show();
-
-                }
-                bitmap.compress(Bitmap.CompressFormat.PNG,100,outputStream);
-                TastyToast.makeText(getApplicationContext(),"File saved",TastyToast.LENGTH_SHORT,TastyToast.SUCCESS).show();
-                File file2 = new File(Environment.getExternalStorageDirectory(),
-                        "/Filer/");
-                if(file2.exists()){
-                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                    intent.setDataAndType(Uri.fromFile(file2), "*/*");
-                    startActivity(intent);
-                }
-                else{
-                    Toast.makeText(getApplicationContext(),"File doesn't exists",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Failed to save to file - "+e.getMessage().toString(),Toast.LENGTH_LONG).show();
                 }
 
-                try {
-                    outputStream.flush();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    outputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+
             }
         });
 
